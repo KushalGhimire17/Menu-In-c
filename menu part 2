@@ -1,0 +1,43 @@
+//switch case
+#include <stdio.h>
+
+int main()
+{
+    int num1, num2, result;
+    char choice;
+    float res;
+
+    printf("\nEnter \nA for Addition \nS for Subtraction \nM for Multiplication \nD for Division: ");
+    scanf("%c", &choice);
+
+    if(choice=='A' || choice == 'S' || choice == 'M' || choice == 'D')
+    {
+        printf("\nEnter two numbers: ");
+        scanf("%d%d", &num1, &num2);
+    }
+
+    switch(choice)
+    {
+    case 'A':
+        result = num1 + num2;
+        printf("\nThe sum of %d and %d is %d", num1, num2, result);
+        break;
+    case 'S':
+        result = num1 - num2;
+        printf("\nThe difference of %d and %d is %d", num1, num2, result);
+        break;
+    case 'M':
+        result = num1 * num2;
+        printf("\nThe product of %d and %d is %d", num1, num2, result);
+        break;
+    case 'D':
+        //explicit typecasting
+        res = (float)num1 / num2;
+        printf("\nThe division of %d by %d is %.2f", num1, num2, res);
+        break;
+    default:
+        printf("\nInvalid Choice...");
+    }
+
+    return 0;
+}
